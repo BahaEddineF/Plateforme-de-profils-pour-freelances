@@ -16,13 +16,25 @@ Une plateforme web permettant la gestion des profils de freelances, avec ajout d
 ## 🧱 Technologies utilisées
 
 - **Backend** : [NestJS](https://nestjs.com/)  
-- **Base de données** : PostgreSQL (ou autre via TypeORM)  
+- **Base de données** : MySQL (géré via phpMyAdmin) (ou autre via TypeORM)
 - **ORM** : TypeORM  
 - **API** : GraphQL avec Apollo Server  
 - **Langage** : TypeScript  
 
 ---
+
+👨‍💻 Développeurs  
+Fatnassi Baheddine  
+Jihed Kedidi  
+Yousser Bouguerre  
+
+Étudiants à TEK-UP, spécialisés en Génie Logiciel  
+
+---
+
 📌 Requête d'exemple (GraphQL)
+
+```graphql
 mutation {
   createSocialLink(
     platform: "LinkedIn",
@@ -35,15 +47,6 @@ mutation {
   }
 }
 ---
-👨‍💻 Développeurs
-Fatnassi Baheddine
-
-Jihed Kedidi
-
-Yousser Bouguerre
-
-Étudiants à TEK-UP, spécialisés en Génie Logiciel.
-
 ## ⚙️ Installation et exécution
 
 ```bash
