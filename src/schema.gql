@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Skill {
+  id: ID!
+  name: String!
+  level: String!
+  freelanceId: Int!
+  freelance: Freelance!
+}
+
+type SocialLink {
+  id: ID!
+  platform: String!
+  url: String!
+  freelanceId: Int!
+  freelance: Freelance!
+}
+
+type Freelance {
+  id: ID!
+  name: String!
+  email: String!
+  profile: String!
+  experience: Int!
+  skills: [Skill!]
+  links: [SocialLink!]
+}
+
+type Query {
+  skills: [Skill!]!
+  skill(id: Int!): Skill
+  socialLinks: [SocialLink!]!
+  socialLink(id: Int!): SocialLink
+}
+
+type Mutation {
+  createSkill(name: String!, level: String!, freelanceId: Int!): Skill!
+  updateSkill(id: Int!, name: String, level: String): Skill!
+  deleteSkill(id: Int!): Boolean!
+  createSocialLink(platform: String!, url: String!, freelanceId: Int!): SocialLink!
+  updateSocialLink(id: Int!, platform: String, url: String): SocialLink!
+  deleteSocialLink(id: Int!): Boolean!
+}
