@@ -29,6 +29,8 @@ type Freelance {
 }
 
 type Query {
+  freelances: [Freelance!]!
+  freelance(id: Int!): Freelance
   skills: [Skill!]!
   skill(id: Int!): Skill
   socialLinks: [SocialLink!]!
@@ -36,6 +38,9 @@ type Query {
 }
 
 type Mutation {
+  createFreelance(name: String!, email: String!, profile: String!, experience: Int!): Freelance!
+  updateFreelance(id: Int!, name: String, email: String, profile: String, experience: Int): Freelance!
+  deleteFreelance(id: Int!): Boolean!
   createSkill(name: String!, level: String!, freelanceId: Int!): Skill!
   updateSkill(id: Int!, name: String, level: String): Skill!
   deleteSkill(id: Int!): Boolean!
