@@ -7,6 +7,8 @@ import { join } from 'path';
 import { FreelanceModule } from './freelance/freelance.module';
 import { SkillModule } from './skill/skill.module';
 import { SocialLinkModule } from './social-link/social-link.module';
+import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -15,14 +17,14 @@ import { SocialLinkModule } from './social-link/social-link.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '', // Remplace par ton mot de passe si nécessaire
+      password: '', // Change if needed
       database: 'projet_freelance',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true, // ⚠️ désactive en production !
+      synchronize: true, // ⚠️ Disable in production
     }),
 
     GraphQLModule.forRoot<ApolloDriverConfig>({
-      driver: ApolloDriver, // ✅ Ajouté ici
+      driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       playground: true,
     }),
@@ -30,6 +32,8 @@ import { SocialLinkModule } from './social-link/social-link.module';
     FreelanceModule,
     SkillModule,
     SocialLinkModule,
+    UserModule,
+    AuthModule, // ✅ AuthModule is imported here
   ],
 })
 export class AppModule {}

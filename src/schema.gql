@@ -47,4 +47,17 @@ type Mutation {
   createSocialLink(platform: String!, url: String!, freelanceId: Int!): SocialLink!
   updateSocialLink(id: Int!, platform: String, url: String): SocialLink!
   deleteSocialLink(id: Int!): Boolean!
+  register(registerInput: RegisterDto!): String!
+  login(loginInput: LoginDto!): String!
+  confirmEmail(token: String!): String!
+}
+
+input RegisterDto {
+  email: String!
+  password: String!
+}
+
+input LoginDto {
+  email: String!
+  password: String!
 }
